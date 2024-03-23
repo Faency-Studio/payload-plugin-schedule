@@ -15,7 +15,7 @@ export const onInitExtension = async (
   try {
     pluginOptions.scheduler.forEach(scheduleConfig => {
       const job = schedule.scheduleJob(scheduleConfig.schedule ?? '* * * * *', fireDate =>
-        scheduleConfig.action(payload, fireDate),
+        scheduleConfig.callback(payload, fireDate),
       )
     })
   } catch (err: unknown) {

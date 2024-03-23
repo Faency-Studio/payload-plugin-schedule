@@ -1,7 +1,7 @@
 {
   "name": "payload-plugin-schedule",
   "version": "0.1.0",
-  "repository": "git@github.com:payloadcms/payload-plugin-template.git",
+  "repository": "git@github.com:Faency-Studio/payload-plugin-schedule.git",
   "description": "Easy Scheduler Plugin for Payload CMS",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,7 +21,8 @@
     "lint": "eslint sr^c",
     "lint:fix": "eslint --fix --ext .ts,.tsx src",
     "clean": "rimraf dist && rimraf dev/yarn.lock",
-    "prepublishOnly": "yarn clean && yarn build && cd dev && yarn test"
+    "prepublishOnly": "yarn clean && yarn build",
+    "publish": "npm publish --access public"
   },
   "author": "nicolas@faency.studio",
   "license": "MIT",
@@ -32,10 +33,7 @@
     "@payloadcms/eslint-config": "^0.0.1",
     "@swc/jest": "^0.2.28",
     "@types/jest": "^29.5.11",
-    "@types/node-cron": "^3.0.11",
     "@types/node-schedule": "^2.1.6",
-    "@types/qs": "^6.9.14",
-    "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "5.12.1",
     "@typescript-eslint/parser": "5.12.1",
     "dotenv": "^8.2.0",
@@ -52,11 +50,6 @@
     "webpack": "^5.90.3"
   },
   "dependencies": {
-    "bree": "^9.2.2",
-    "node-cron": "^3.0.3",
-    "node-schedule": "^2.1.1",
-    "qs": "^6.12.0",
-    "react-router-dom": "^6.22.3",
-    "uuid": "^9.0.1"
+    "node-schedule": "^2.1.1"
   }
 }

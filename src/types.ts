@@ -1,3 +1,4 @@
+import type schedule from 'node-schedule'
 import { type Payload } from 'payload'
 
 export interface PluginTypes {
@@ -16,11 +17,17 @@ export interface PluginTypes {
      * Supports Cron-style Scheduling, Date-based Scheduling and Recurrence Rule Scheduling.
      * @default '* * * * *' (once per minute)
      */
-    schedule?: string
+    schedule?:
+      | string
+      | number
+      | Date
+      | schedule.RecurrenceRule
+      | schedule.RecurrenceSpecDateRange
+      | schedule.RecurrenceSpecObjLit
     /**
      * Function that should be run.
      */
-    action: (payload: Payload, fireDate: Date) => void
+    callback: (payload: Payload, fireDate: Date) => void
   }[]
 }
 

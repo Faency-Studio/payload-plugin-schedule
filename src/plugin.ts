@@ -5,7 +5,7 @@ import type { PluginTypes } from './types'
 
 type PluginType = (pluginOptions: PluginTypes) => Plugin
 
-export const samplePlugin =
+export const schedulePlugin =
   (pluginOptions: PluginTypes): Plugin =>
   incomingConfig => {
     let config = { ...incomingConfig }

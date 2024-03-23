@@ -4,11 +4,7 @@ This is an scheduler [Payload CMS](https://payloadcms.com) plugin.
 
 It allows to create callbacks and execute these at a given schedule.
 
-## Background
-
-Here is a short recap on how to integrate plugins with Payload, to learn more visit the [plugin overview page](https://payloadcms.com/docs/plugins/overview).
-
-### How to install a plugin
+## How to install this plugin
 
 To install this plugin, simply add it to your payload.config() in the Plugin array.
 
@@ -35,3 +31,34 @@ export const config = buildConfig({
   ]
 });
 ```
+
+## How to configure this Plugin
+
+This plugin is based upon node-schedule. and just provides an easy way to add scheduled functions via the payload config.
+
+Lets list the options that are available:
+
+| Key                | type          | default       | description   |
+| ------------------ | ------------- | ------------- | ------------- |
+| enabled            | boolean       | false         | Set to true to enable the plugin |
+| scheduler          | array         | []            | Each object in this array creates one scheduled function |
+| scheduler.schedule | Schedule      | * * * * *     | Supports all Scheduling options of [node-schedule](https://github.com/node-schedule/node-schedule?tab=readme-ov-file#cron-style-scheduling) |
+| scheduler.callback | function      | false         | The function that should be run periodically |
+
+Some properties are provided to the callback:
+
+| Key                | type          | description   |
+| ------------------ | ------------- | ------------- |
+| payload            | Payload       | Payload object. Allows for example to use of the Local API |
+| fireDate           | Date          | Date of when the callback should have been fired. **Not the current time.** |
+
+
+## Contributing
+
+This plugin is pretty new and no rules have been established jet. If you would like to contribute by writing code, fixing stuff, reporting bugs or providing ideas, please feel free to create a pull-request or commit an issue.
+
+## Roadmap
+
+Currently this is more of an collection of ideas on how to improve this plugin, not a commited roadmap.
+
+- Add The apility to add and cancel crons programatically and make this functionality available in the payload config

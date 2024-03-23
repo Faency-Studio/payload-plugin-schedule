@@ -61,4 +61,7 @@ This plugin is pretty new and no rules have been established jet. If you would l
 
 Currently this is more of an collection of ideas on how to improve this plugin, not a commited roadmap.
 
-- Add The apility to add and cancel crons programatically and make this functionality available in the payload config
+- The apility to add and cancel crons programatically and make this functionality available in the payload config
+- Ability to persist programatically created cronjobs even after a server restart / crash
+- Dashboard for currently active cronjobs
+- Logging of the cronjobs

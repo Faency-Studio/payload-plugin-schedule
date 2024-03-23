@@ -1,6 +1,6 @@
 {
   "name": "payload-plugin-schedule",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "repository": "git@github.com:Faency-Studio/payload-plugin-schedule.git",
   "description": "Easy Scheduler Plugin for Payload CMS",
   "main": "dist/index.js",
